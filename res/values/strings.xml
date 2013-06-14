@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YNUPC</string>
+    <string name="general_research">General Research Bldg. W 204</string>
+    <string name="more">more</string>
+    <string name="available_seats">Available Seats</string>
+    <string name="science_library">Science and Technology Library 1F</string>
+    <string name="seisan_to_305">Seisan-to Ⅰ 305</string>
+    <string name="denjo_to_1f">Denjo-to 1F Terminal Room</string>
+    <string name="denjo_to_3f_1">Denjo-to 3F Terminal Room 1</string>
+    <string name="denjo_to_3f_2">Denjo-to 3F Terminal Room 2</string>
+    <string name="machine_shop_a">Machine Shop A</string>
+    <string name="machine_shop_b">Machine Shop B</string>
+    <string name="machine_shop_cd">Machine Shop CD</string>
+    <string name="machine_shop_e">Machine Shop E</string>
+    <string name="machine_shop_f">Machine Shop F</string>
+    <string name="library_refresh">Central Library 2F Refresh Room</string>
+    <string name="library_2f_plaza">Central Library 2F PC Plaza</string>
+    <string name="library_3f_plaza">Central Library 3F PC Plaza</string>
+    <string name="library_1f_media">Central Library 1F Media Booth</string>
+    <string name="library_working_studio">Central Library 2F,3F Working Studio</string>
+    <string name="edhs_research_bldg">Research Bldg. 2 (EdHS) 517</string>
+    <string name="business_research_bldg">New Research Bldg. (Business)</string>
+    <string name="center_educational_research">Center for Educational Research &amp; Practices</string>
+    <string name="econ_lecture_hall">Lecture Hall 1 (Econ) 303</string>
+    <string name="international_student_center">International Student Center 2F Lobby</string>
+    <string name="classroom_only">For classroom use only.</string>
+    <string name="timetable">Timetable</string>
+    <string name="period">Period %1$d</string>
+
+    <string name="bldg_general_research">General Research Bldg. W</string>
+    <string name="bldg_science_library">Science and Technology Library</string>
+    <string name="bldg_mechanical_engineering">Div.of Mechanical Engineering and Materials Science</string>
+    <string name="bldg_computer_engineering">Computer Lab., Division of Electrical and Computer Engineering</string>
+    <string name="bldg_central_library">Central Library</string>
+    <string name="bldg_edhs_research">Research Bldg.2 (EdHS)</string>
+    <string name="bldg_education_desingn">Education Design Center</string>
+    <string name="bldg_business_research">Research Bldg. (Bus.Admin)</string>
+    <string name="bldg_econ_new_research">New Research Bldg. (Econ)</string>
+    <string name="bldg_international_student_center">International Student Center</string>
+    <string name="bldg_itsc_annex">Annex Bldg. of Information Technology Service Center, Education Center</string>
+    <string name="bldg_itsc">Information Technology Service Center</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YNUPC</string>
+    <string name="general_research">総合研究棟W204</string>
+    <string name="more">詳細</string>
+    <string name="available_seats">空席</string>
+    <string name="science_library">理工学系図書館１F</string>
+    <string name="seisan_to_305">生産工学科1号棟305</string>
+    <string name="denjo_to_1f">電子情報計算機棟-1F端末室</string>
+    <string name="denjo_to_3f_1">電子情報計算機棟-3F端末室-1</string>
+    <string name="denjo_to_3f_2">電子情報計算機棟-3F端末室-2</string>
+    <string name="machine_shop_a">ＰＣ教室Ａ</string>
+    <string name="machine_shop_b">PC教室B</string>
+    <string name="machine_shop_cd">PC教室CD</string>
+    <string name="machine_shop_e">PC教室E</string>
+    <string name="machine_shop_f">PC教室F</string>
+    <string name="library_refresh">中央図書館2Fリフレッシュルーム</string>
+    <string name="library_2f_plaza">中央図書館2FＰＣプラザ</string>
+    <string name="library_3f_plaza">中央図書館3FＰＣプラザ</string>
+    <string name="library_1f_media">中央図書館1Fメディアブース</string>
+    <string name="library_working_studio">中央図書館2F,3Fワーキングスタジオ</string>
+    <string name="edhs_research_bldg">教育人間科学部第2研究棟-517</string>
+    <string name="business_research_bldg">経済学部新研究棟-301</string>
+    <string name="center_educational_research">教育デザインセンター1Ｆ</string>
+    <string name="econ_lecture_hall">経営学部1号館-303</string>
+    <string name="international_student_center">留学生センター2Fロビー</string>
+    <string name="classroom_only">講義のみ使用可能です。</string>
+    <string name="timetable">時間割</string>
+    <string name="period">%1$d時限目</string>
+
+    <string name="bldg_general_research">総合研究棟 W棟</string>
+    <string name="bldg_science_library">理工学系研究図書館</string>
+    <string name="bldg_mechanical_engineering">生産工学科棟</string>
+    <string name="bldg_computer_engineering">電子情報工学科計算機実験棟</string>
+    <string name="bldg_central_library">中央図書館</string>
+    <string name="bldg_edhs_research">教育人間科学部第２研究棟</string>
+    <string name="bldg_education_desingn">教育人間科学部附属教育デザインセンター</string>
+    <string name="bldg_business_research">経営学部１号館</string>
+    <string name="bldg_econ_new_research">経済学部新研究棟</string>
+    <string name="bldg_international_student_center">留学生センター</string>
+    <string name="bldg_itsc_annex">情報基盤センター別館、大学教育総合センター</string>
+    <string name="bldg_itsc">情報基盤センター</string>
+</resources>
