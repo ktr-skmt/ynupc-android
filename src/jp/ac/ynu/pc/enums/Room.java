@@ -21,6 +21,7 @@ public enum Room {
     MACHINE_SHOP_D("D"),
     MACHINE_SHOP_E("E"),
     MACHINE_SHOP_F("F"),
+    MACHINE_SHOP_CD("CD"),
     ECON_NEW_RESEARCH_301("G"),
     BUSINESS_RESEARCH_303("H"),
     EDHS_RESEARCH2_517("I"),

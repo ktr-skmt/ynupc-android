@@ -148,6 +148,10 @@ public class RoomInfo implements Parcelable{
         }
     }
 
+    public boolean isPCAvailable(int pcId){
+        return pcIds.contains(pcId);
+    }
+
     public Room getRoom() {
         return room;
     }
