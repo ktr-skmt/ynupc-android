@@ -49,9 +49,11 @@ public class SingleRoom implements RoomInfo {
 
     private int availableSeats;
     private int totalSeats;
-    private HashSet<Integer> pcIds;
+    private HashSet<Integer> pcIds = new HashSet<Integer>();
 
-    /** The Constant CREATOR. */
+    /**
+     * The Constant CREATOR.
+     */
     public static final Parcelable.Creator<RoomInfo> CREATOR = new Parcelable.Creator<RoomInfo>() {
         @Override
         public RoomInfo createFromParcel(Parcel in) {
@@ -87,7 +89,7 @@ public class SingleRoom implements RoomInfo {
     }
 
     @Override
-    public void readFromParcel(Parcel in){
+    public void readFromParcel(Parcel in) {
         roomName = in.readString();
         roomNameInEnglish = in.readString();
         mode = in.readString();
@@ -103,7 +105,7 @@ public class SingleRoom implements RoomInfo {
         totalSeats = in.readInt();
     }
 
-    public SingleRoom(Parcel in){
+    public SingleRoom(Parcel in) {
         readFromParcel(in);
     }
 
@@ -131,27 +133,32 @@ public class SingleRoom implements RoomInfo {
             lecturer = mapJson.getString(KEY_LECTURE);
     }
 
+
     @Override
-    public void setRoomJSON(JSONObject roomJSON) throws JSONException{
-        if(roomJSON.has(KEY_PC_ID)){
+    public void setRoomJSON(JSONObject roomJSON) throws JSONException {
+        if (roomJSON.has(KEY_PC_ID)) {
             JSONArray pcIdsArray = roomJSON.getJSONArray(KEY_PC_ID);
-            pcIds = new HashSet<Integer>();
-            for(int i = 0; i < pcIdsArray.length(); ++i){
+            if (pcIds == null) {
+                pcIds = new HashSet<Integer>();
+            } else {
+                pcIds.clear();
+            }
+            for (int i = 0; i < pcIdsArray.length(); ++i) {
                 pcIds.add(pcIdsArray.getInt(i));
             }
         }
 
-        if(roomJSON.has(KEY_AVAILABLE_SEATS)){
+        if (roomJSON.has(KEY_AVAILABLE_SEATS)) {
             availableSeats = roomJSON.getInt(KEY_AVAILABLE_SEATS);
         }
 
-        if(roomJSON.has(KEY_TOTAL_SEATS)){
+        if (roomJSON.has(KEY_TOTAL_SEATS)) {
             totalSeats = roomJSON.getInt(KEY_TOTAL_SEATS);
         }
     }
 
     @Override
-    public boolean isPCAvailable(int pcId){
+    public boolean isPCAvailable(int pcId) {
         return pcIds.contains(pcId);
     }
 
@@ -167,29 +174,29 @@ public class SingleRoom implements RoomInfo {
 
     @Override
     public String getRoomName() {
-        if(Locale.JAPAN.equals(Locale.getDefault())){
+        if (Locale.JAPAN.equals(Locale.getDefault())) {
             return roomName;
-        }else {
+        } else {
             return roomNameInEnglish;
         }
     }
 
     @Override
-    public String getContents(Context context){
-        if(mode.equals("in_session")){
+    public String getContents(Context context) {
+        if (mode.equals("in_session")) {
             // 授業中
             return getLectureData(context);
-        }else if(mode.equals("open")){
+        } else if (mode.equals("open")) {
             // 開放
             return getOpenData(context);
-        }else if(mode.equals("closed")){
+        } else if (mode.equals("closed")) {
             return getClosedData(context);
         }
 
         return "";
     }
 
-    private String getLectureData(Context context){
+    private String getLectureData(Context context) {
         StringBuilder builder = new StringBuilder();
         builder.append("教科名: ");
         builder.append(subject);
@@ -199,8 +206,8 @@ public class SingleRoom implements RoomInfo {
         return builder.toString();
     }
 
-    private String getOpenData(Context context){
-        if(room == Room.MACHINE_SHOP_E){
+    private String getOpenData(Context context) {
+        if (room == Room.MACHINE_SHOP_E) {
             return "講義のみ使用可能です";
         }
 
@@ -214,24 +221,24 @@ public class SingleRoom implements RoomInfo {
         return builder.toString();
     }
 
-    private String getClosedData(Context context){
+    private String getClosedData(Context context) {
         // 午前中で閉まっていれば今日の開館時間
         // 午後で閉まっていれば明日の開館時間
         String day;
         String openingTime;
         String closingTime;
-        if(new Date().getHours() < 12){
+        if (new Date().getHours() < 12) {
             day = "今日";
             openingTime = todayOpeningTime;
             closingTime = todayClosingTime;
-        }else {
-            day =  "明日";
+        } else {
+            day = "明日";
             openingTime = tomorrowOpeningTime;
             closingTime = todayClosingTime;
         }
 
-        if(openingTime.equals("") || openingTime.equals("12:am") ||
-           closingTime.equals("") || closingTime.equals("12:am")){
+        if (openingTime.equals("") || openingTime.equals("12:am") ||
+                closingTime.equals("") || closingTime.equals("12:am")) {
             return String.format("%sは閉室です。", day);
         }
 

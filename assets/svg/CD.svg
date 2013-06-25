@@ -58,7 +58,6 @@
 <rect id="pc_c46_off" x="293.24" y="124.43" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.553" height="22.633"/>
 <rect id="pc_c47_off" x="293.24" y="96.799" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.553" height="22.633"/>
 <rect id="pc_c48_off" x="293.24" y="69.166" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.553" height="22.633"/>
-<rect id="pc_d52_off" x="404.86" y="409.439" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.554" height="22.633"/>
 <rect id="pc_c49_off" x="349.05" y="110.62" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.554" height="22.633"/>
 <rect id="pc_c50_off" x="349.05" y="82.982" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.554" height="22.633"/>
 <rect id="pc_c51_off" x="404.86" y="110.62" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.554" height="22.633"/>
@@ -115,7 +114,8 @@
 <rect id="pc_d49_off" x="349.05" y="437.07" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.554" height="22.633"/>
 <rect id="pc_d50_off" x="349.05" y="409.439" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.554" height="22.633"/>
 <rect id="pc_d51_off" x="404.86" y="437.07" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.554" height="22.633"/>
-<rect id="pc_d53_off" x="39" y="523.44" fill="#64C5E5" stroke="#64C5E5" stroke-width="0.9173" stroke-miterlimit="10" width="24.553" height="22.633"/>
+<rect id="pc_d52_off" x="404.86" y="409.439" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.554" height="22.633"/>
+<rect id="pc_d53_off" x="39" y="523.44" fill="#64C5E5" stroke="#64C5E5"  stroke-miterlimit="10" width="24.553" height="22.633"/>
 <line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="30.46" y1="47.667" x2="30.46" y2="705.21"/>
 <line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="30.46" y1="703.692" x2="449.54" y2="703.692"/>
 <line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="449.54" y1="705.21" x2="449.54" y2="604.78"/>

@@ -64,4 +64,32 @@ public abstract class RoomMap {
         return builder.toString();
     }
 
+
+    protected String generatePCRect(float width, float height, float x, float y, boolean isOn, String matrix){
+        final String color;
+        if(isOn){
+            color = Config.COLOR_STATE_ON;
+        }else {
+            color = Config.COLOR_STATE_OFF;
+        }
+
+        StringBuilder builder = new StringBuilder();
+        builder.append("<rect x=\"");
+        builder.append(x);
+        builder.append("\" y=\"");
+        builder.append(y);
+        builder.append("\" width=\"");
+        builder.append(width);
+        builder.append("\" height=\"");
+        builder.append(height);
+        builder.append("\" stroke=\"");
+        builder.append(color);
+        builder.append("\" stroke-miterlimit=\"10\" fill=\"");
+        builder.append(color);
+        builder.append("\" transform=\"");
+        builder.append(matrix);
+        builder.append("\"/>");
+        return builder.toString();
+    }
+
 }

@@ -53,7 +53,7 @@ public class RoomMapFactory {
             case SCIENCE_LIBRARY:
                 return new ScienceLibrary(roomInfo);
             case INTERNATIONAL_STUDENT_CENTER:
-                return new InternatinalStudentCenter(roomInfo);
+                return new InternationalStudentCenter(roomInfo);
 
         }
         return null;

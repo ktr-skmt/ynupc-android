@@ -89,17 +89,17 @@ public class MapActivity extends SherlockActivity {
                                     }
                                 }
                             } catch (JSONException e) {
-                                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                                e.printStackTrace();
                             }
                         }
 
                         @Override
                         public void onFailure(Throwable throwable, String s) {
-                            super.onFailure(throwable, s);    //To change body of overridden methods use File | Settings | File Templates.
+                            super.onFailure(throwable, s);
                         }
                     });
                 } catch (JSONException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 }
             }
 

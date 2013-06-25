@@ -22,7 +22,6 @@
 	
 		<text transform="matrix(1 0 0 1 180 560)" display="inline" fill="#040000" font-family="'KozGoPr6N-Regular-83pv-RKSJ-H'" font-size="18">Library 2F→</text>
 </g>
-<rect id="pc_34_off" x="83.208" y="130.69" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.674" height="16.51"/>
 <rect id="pc_35_off" x="97.947" y="151.763" transform="matrix(0.5839 -0.8118 0.8118 0.5839 -82.2943 155.2299)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.675" height="12.265"/>
 <rect id="pc_36_off" x="69.364" y="150.453" transform="matrix(-0.6913 -0.7225 0.7225 -0.6913 25.0454 323.8669)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.674" height="12.262"/>
 <rect id="pc_39_off" x="77.719" y="226.125" transform="matrix(0.9967 0.0806 -0.0806 0.9967 19.0133 -6.503)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.674" height="12.264"/>
@@ -46,7 +45,6 @@
 <rect id="pc_2_off" x="338.031" y="124.578" transform="matrix(0.9406 -0.3394 0.3394 0.9406 -23.5658 126.6807)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.672" height="12.263"/>
 <rect id="pc_3_off" x="317.023" y="109.764" transform="matrix(0.1806 0.9836 -0.9836 0.1806 383.8725 -228.9794)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.679" height="12.268"/>
 <rect id="pc_1_off" x="339.153" y="101.285" transform="matrix(0.8396 0.5432 -0.5432 0.8396 114.7312 -173.7025)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.672" height="12.267"/>
-<rect id="pc_16_off" x="229.47" y="165.03" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.672" height="12.264"/>
 <rect id="pc_17_off" x="244.192" y="186.091" transform="matrix(0.465 -0.8853 0.8853 0.465 -32.9323 329.9477)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.679" height="12.263"/>
 <rect id="pc_18_off" x="215.614" y="184.796" transform="matrix(-0.6913 -0.7225 0.7225 -0.6913 247.5939 487.6257)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.675" height="12.264"/>
 <rect id="pc_19_off" x="249.681" y="244.708" transform="matrix(-0.9695 0.2451 -0.2451 -0.9695 577.5277 429.8075)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.677" height="12.263"/>
@@ -66,12 +64,17 @@
 <rect id="pc_26_off" x="309.963" y="361.67" transform="matrix(0.817 0.5766 -0.5766 0.817 271.0572 -118.5413)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.674" height="12.265"/>
 <rect id="pc_29_off" x="305.881" y="442.346" transform="matrix(0.9786 -0.206 0.206 0.9786 -85.5584 75.169)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.676" height="12.262"/>
 <rect id="pc_30_off" x="288.776" y="426.244" transform="matrix(-0.2873 0.9578 -0.9578 -0.2873 801.7739 268.2033)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.67" height="12.261"/>
-<rect id="pc_64_off" x="368.67" y="53.909" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="25.617" height="14.354"/>
 <rect id="pc_28_off" x="314.767" y="420.352" transform="matrix(0.817 0.5767 -0.5767 0.817 305.8184 -110.5765)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.678" height="12.265"/>
 <rect id="pc_33_off" x="312.529" y="498.345" transform="matrix(0.9992 -0.0409 0.0409 0.9992 -20.3708 13.7159)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.677" height="12.265"/>
-<rect id="pc_60_off" x="214.2" y="53.909" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="25.618" height="14.354"/>
 <rect id="pc_31_off" x="297.282" y="479.643" transform="matrix(-0.5385 0.8426 -0.8426 -0.5385 885.6765 486.4812)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.675" height="12.264"/>
 <rect id="pc_32_off" x="324.924" y="479.118" transform="matrix(0.6373 0.7706 -0.7706 0.6373 496.2668 -83.9006)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.678" height="12.263"/>
+<rect id="pc_5_off" x="335.865" y="163.867" transform="matrix(-0.8422 -0.5391 0.5391 -0.8422 548.5115 500.9472)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="23.378" height="12.698"/>
+<rect id="pc_4_off" x="314.929" y="172.639" transform="matrix(0.1443 0.9895 -0.9895 0.1443 456.5967 -170.0396)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="23.374" height="12.695"/>
+<rect id="pc_6_off" x="337.889" y="187.233" transform="matrix(-0.9226 0.3858 -0.3858 -0.9226 746.7742 237.3163)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="23.377" height="12.699"/>
+<rect id="pc_34_off" x="83.208" y="130.69" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.674" height="16.51"/>
+<rect id="pc_16_off" x="229.47" y="165.03" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="24.672" height="12.264"/>
+<rect id="pc_64_off" x="368.67" y="53.909" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="25.617" height="14.354"/>
+<rect id="pc_60_off" x="214.2" y="53.909" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="25.618" height="14.354"/>
 <rect id="pc_52_off" x="202.14" y="554.47" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="20.091" height="19.811"/>
 <rect id="pc_55_off" x="226.3" y="554.47" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="20.091" height="19.811"/>
 <rect id="pc_65_off" x="407.29" y="53.909" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="25.618" height="14.354"/>
@@ -84,9 +87,6 @@
 <rect id="pc_58_off" x="136.97" y="53.909" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="25.618" height="14.354"/>
 <rect id="pc_61_off" x="252.82" y="53.909" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="25.617" height="14.354"/>
 <rect id="pc_56_off" x="59.731" y="53.909" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="25.618" height="14.354"/>
-<rect id="pc_5_off" x="335.865" y="163.867" transform="matrix(-0.8422 -0.5391 0.5391 -0.8422 548.5115 500.9472)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="23.378" height="12.698"/>
-<rect id="pc_4_off" x="314.929" y="172.639" transform="matrix(0.1443 0.9895 -0.9895 0.1443 456.5967 -170.0396)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="23.374" height="12.695"/>
-<rect id="pc_6_off" x="337.889" y="187.233" transform="matrix(-0.9226 0.3858 -0.3858 -0.9226 746.7742 237.3163)" fill="#64C5E5" stroke="#64C5E5" stroke-miterlimit="10" width="23.377" height="12.699"/>
 <line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="29.979" y1="37.5" x2="451.86" y2="37.5"/>
 <line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="451.86" y1="37.5" x2="451.86" y2="75.273"/>
 <line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="29.979" y1="37.5" x2="29.979" y2="69.494"/>

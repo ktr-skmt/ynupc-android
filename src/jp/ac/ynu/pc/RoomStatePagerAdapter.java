@@ -1,8 +1,10 @@
 package jp.ac.ynu.pc;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import jp.ac.ynu.pc.models.RoomInfo;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,22 +14,36 @@ import android.support.v4.app.FragmentStatePagerAdapter;
  * To change this template use File | Settings | File Templates.
  */
 public class RoomStatePagerAdapter extends FragmentStatePagerAdapter{
+    private RoomInfo roomInfo;
 
 
-    public RoomStatePagerAdapter(FragmentManager fm) {
+    public RoomStatePagerAdapter(FragmentManager fm, RoomInfo roomInfo) {
         super(fm);
+
+        this.roomInfo = roomInfo;
     }
 
     @Override
     public Fragment getItem(int i) {
+        Bundle args = new Bundle();
+        args.putParcelable(Config.BUNDLE_KEY_ROOM_INFO, roomInfo);
+
+        Fragment fragment = null;
+
         switch (i){
             case 0:
-                return new RoomMapFragment();
+                fragment = new RoomMapFragment();
+                break;
             case 1:
-                return new TimetableFragment();
+                fragment = new TimetableFragment();
+                break;
         }
 
-        return null;
+        if(fragment != null){
+            fragment.setArguments(args);
+        }
+
+        return fragment;
     }
 
     @Override

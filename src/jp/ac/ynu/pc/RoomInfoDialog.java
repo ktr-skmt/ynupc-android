@@ -35,7 +35,7 @@ public class RoomInfoDialog extends Dialog{
                 RoomInfo item = (RoomInfo) adapterView.getItemAtPosition(i);
 
                 Intent intent = new Intent(getContext(), RoomActivity.class);
-                intent.putExtra("data", item);
+                intent.putExtra(Config.BUNDLE_KEY_ROOM_INFO, item);
                 getContext().startActivity(intent);
             }
         });
