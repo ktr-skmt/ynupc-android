@@ -35,6 +35,7 @@ public class Library1FMedia extends RoomMap {
         Picture picture = svg.getPicture();
         canvas.drawPicture(picture);
 
+
         return bitmap;
     }
 

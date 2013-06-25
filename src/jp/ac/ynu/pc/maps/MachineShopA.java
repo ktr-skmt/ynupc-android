@@ -1,11 +1,11 @@
 package jp.ac.ynu.pc.maps;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Picture;
+import android.graphics.*;
 import com.larvalabs.svgandroid.SVG;
 import com.larvalabs.svgandroid.SVGParser;
 import jp.ac.ynu.pc.models.RoomInfo;
+
+import java.util.Locale;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,7 +23,7 @@ public class MachineShopA extends RoomMap {
 
     private RoomInfo roomInfo;
 
-    public MachineShopA(RoomInfo roomInfo){
+    public MachineShopA(RoomInfo roomInfo) {
         this.roomInfo = roomInfo;
     }
 
@@ -37,6 +37,7 @@ public class MachineShopA extends RoomMap {
 
         Picture picture = svg.getPicture();
         canvas.drawPicture(picture);
+        drawTexts(canvas);
 
         return bitmap;
     }
@@ -104,6 +105,20 @@ public class MachineShopA extends RoomMap {
         builder.append("<line fill=\"none\" stroke=\"#000000\" stroke-width=\"3\" stroke-miterlimit=\"10\" x1=\"31.513\" y1=\"580.247\" x2=\"213.09\" y2=\"580.247\"/>");
         builder.append(generateEndSVG());
         return builder.toString();
+    }
+
+    private void drawTexts(Canvas canvas) {
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setTextSize(14.0f);
+        paint.setColor(Color.BLACK);
+
+        if (Locale.JAPAN.equals(Locale.getDefault())) {
+            canvas.drawText("入口", 223.9102f, 558.54f, paint);
+            canvas.drawText("PC教室B →", 350f, 525.4697f, paint); // FIXME: paintにtext align設定して右寄せに
+        } else {
+            canvas.drawText("Entrance", 223.9102f, 558.54f, paint);
+            canvas.drawText("Machine Shop B →", 300f, 525.4697f, paint);
+        }
     }
 
 //    <g id="japanese_words">
