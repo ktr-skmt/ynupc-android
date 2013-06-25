@@ -1,4 +1,4 @@
-package jp.ac.ynu.pc;
+package jp.ac.ynu.pc.utils;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;

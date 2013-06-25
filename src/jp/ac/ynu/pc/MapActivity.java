@@ -9,6 +9,7 @@ import com.qozix.mapview.MapView;
 import jp.ac.ynu.pc.enums.Room;
 import jp.ac.ynu.pc.models.RoomInfo;
 import jp.ac.ynu.pc.models.SingleRoom;
+import jp.ac.ynu.pc.utils.ApiRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -74,7 +75,7 @@ public class MapActivity extends SherlockActivity {
                                     try {
                                         JSONObject roomInfoJson = response.getJSONObject(room.getRoomName());
 
-                                        if(!roomInfoHashMap.containsKey(room)){
+                                        if (!roomInfoHashMap.containsKey(room)) {
                                             continue;
                                         }
 

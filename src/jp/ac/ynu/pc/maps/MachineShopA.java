@@ -18,7 +18,7 @@ public class MachineShopA extends RoomMap {
     private static final int WIDTH = 480;
     private static final int HEIGHT = 700;
 
-    private static final float RECT_WIDTH = 34.498f;
+    private static final float RECT_WIDTH = 32.498f;
     private static final float RECT_HEIGHT = 16.885f;
 
     private RoomInfo roomInfo;
