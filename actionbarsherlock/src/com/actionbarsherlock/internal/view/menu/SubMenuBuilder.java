@@ -25,7 +25,7 @@ import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
 
 /**
- * The model for a sub menu, which is an extension of the menu.  Most methods are proxied to
+ * The models for a sub menu, which is an extension of the menu.  Most methods are proxied to
  * the parent menu.
  */
 public class SubMenuBuilder extends MenuBuilder implements SubMenu {

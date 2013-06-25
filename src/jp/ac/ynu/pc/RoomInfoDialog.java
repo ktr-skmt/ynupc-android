@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import jp.ac.ynu.pc.models.RoomInfo;
 
 import java.util.List;
 

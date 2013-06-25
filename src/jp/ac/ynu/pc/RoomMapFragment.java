@@ -2,19 +2,15 @@ package jp.ac.ynu.pc;
 
 
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Picture;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import com.larvalabs.svgandroid.SVG;
-import com.larvalabs.svgandroid.SVGParser;
-import jp.ac.ynu.pc.R;
-
-import java.io.IOException;
+import jp.ac.ynu.pc.maps.RoomMap;
+import jp.ac.ynu.pc.maps.RoomMapFactory;
+import jp.ac.ynu.pc.models.RoomInfo;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,12 +20,10 @@ import java.io.IOException;
  * To change this template use File | Settings | File Templates.
  */
 public class RoomMapFragment extends Fragment {
-    private ImageView mapView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.room_map, null);
-
-        mapView = (ImageView) v.findViewById(R.id.room_map);
 
 
         return v;
@@ -37,24 +31,22 @@ public class RoomMapFragment extends Fragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);    //To change body of overridden methods use File | Settings | File Templates.
+        super.onActivityCreated(savedInstanceState);
 
-        Bitmap bitmap = Bitmap.createBitmap(480, 800, Bitmap.Config.ARGB_4444);
-        Canvas canvas = new Canvas(bitmap);
+        ImageView mapView = (ImageView) getView().findViewById(R.id.room_map);
+        Bundle args = getArguments();
+        RoomInfo roomInfo = args.getParcelable(Config.BUNDLE_KEY_ROOM_INFO);
 
-        SVG svg = null; // getSVGFromString("");
-        try {
-            svg = SVGParser.getSVGFromAsset(getActivity().getAssets(), "svg/U.svg");
+        RoomMap map = RoomMapFactory.getRoomMap(roomInfo);
+        if (map != null) {
+            Bitmap mapBitmap = map.createMap();
+            if (mapBitmap != null) {
+                mapView.setImageBitmap(mapBitmap);
+            }
 
-            Picture picture = svg.getPicture();
-            canvas.drawPicture(picture);
-//            mapView.setImageDrawable(svg.createPictureDrawable());
-            mapView.setImageBitmap(bitmap
-            );
             mapView.requestLayout();
             mapView.invalidate();
-        } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
+
     }
 }

@@ -1,5 +1,7 @@
 package jp.ac.ynu.pc;
 
+import jp.ac.ynu.pc.models.RoomInfo;
+
 import java.util.Map;
 
 /**

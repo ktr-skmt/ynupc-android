@@ -119,7 +119,7 @@ class ActivityChooserView extends ViewGroup implements ActivityChooserModelClien
     ActionProvider mProvider;
 
     /**
-     * Observer for the model data.
+     * Observer for the models data.
      */
     private final DataSetObserver mModelDataSetOberver = new DataSetObserver() {
 
@@ -564,7 +564,7 @@ class ActivityChooserView extends ViewGroup implements ActivityChooserModelClien
                         }
                     } else {
                         // If the default target is not shown in the list, the first
-                        // item in the model is default action => adjust index
+                        // item in the models is default action => adjust index
                         position = mAdapter.getShowDefaultActivity() ? position : position + 1;
                         Intent launchIntent = mAdapter.getDataModel().chooseActivity(position);
                         if (launchIntent != null) {

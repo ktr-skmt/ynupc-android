@@ -159,7 +159,7 @@ public class ShareActionProvider extends ActionProvider {
      */
     @Override
     public View onCreateActionView() {
-        // Create the view and set its data model.
+        // Create the view and set its data models.
         ActivityChooserModel dataModel = ActivityChooserModel.get(mContext, mShareHistoryFileName);
         ActivityChooserView activityChooserView = new ActivityChooserView(mContext);
         activityChooserView.setActivityChooserModel(dataModel);
@@ -286,7 +286,7 @@ public class ShareActionProvider extends ActionProvider {
     }
 
     /**
-     * Set the activity chooser policy of the model backed by the current
+     * Set the activity chooser policy of the models backed by the current
      * share history file if needed which is if there is a registered callback.
      */
     private void setActivityChooserPolicyIfNeeded() {

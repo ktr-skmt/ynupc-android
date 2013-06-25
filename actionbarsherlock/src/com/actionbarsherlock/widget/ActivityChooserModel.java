@@ -46,8 +46,8 @@ import java.util.concurrent.Executors;
 
 /**
  * <p>
- * This class represents a data model for choosing a component for handing a
- * given {@link Intent}. The model is responsible for querying the system for
+ * This class represents a data models for choosing a component for handing a
+ * given {@link Intent}. The models is responsible for querying the system for
  * activities that can handle the given intent and order found activities
  * based on historical data of previous choices. The historical data is stored
  * in an application private file. If a client does not want to have persistent
@@ -56,14 +56,14 @@ import java.util.concurrent.Executors;
  * <p>
  * </p>
  * For each backing history file there is a singleton instance of this class. Thus,
- * several clients that specify the same history file will share the same model. Note
- * that if multiple clients are sharing the same model they should implement semantically
- * equivalent functionality since setting the model intent will change the found
+ * several clients that specify the same history file will share the same models. Note
+ * that if multiple clients are sharing the same models they should implement semantically
+ * equivalent functionality since setting the models intent will change the found
  * activities and they may be inconsistent with the functionality of some of the clients.
  * For example, choosing a share activity can be implemented by a single backing
- * model and two different views for performing the selection. If however, one of the
+ * models and two different views for performing the selection. If however, one of the
  * views is used for sharing but the other for importing, for example, then each
- * view should be backed by a separate model.
+ * view should be backed by a separate models.
  * </p>
  * <p>
  * The way clients interact with this class is as follows:
@@ -71,7 +71,7 @@ import java.util.concurrent.Executors;
  * <p>
  * <pre>
  * <code>
- *  // Get a model and set it to a couple of clients with semantically similar function.
+ *  // Get a models and set it to a couple of clients with semantically similar function.
  *  ActivityChooserModel dataModel =
  *      ActivityChooserModel.get(context, "task_specific_history_file_name.xml");
  *
@@ -102,7 +102,7 @@ class ActivityChooserModel extends DataSetObservable {
         /**
          * Sets the {@link ActivityChooserModel}.
          *
-         * @param dataModel The model.
+         * @param dataModel The models.
          */
         public void setActivityChooserModel(ActivityChooserModel dataModel);
     }
@@ -142,7 +142,7 @@ class ActivityChooserModel extends DataSetObservable {
          *     any changes to the latter will be ignored.
          * </p>
          *
-         * @param host The listener's host model.
+         * @param host The listener's host models.
          * @param intent The intent for launching the chosen activity.
          * @return Whether the intent is handled and should not be delivered to clients.
          *
@@ -218,7 +218,7 @@ class ActivityChooserModel extends DataSetObservable {
     private static final int INVALID_INDEX = -1;
 
     /**
-     * Lock to guard the model registry.
+     * Lock to guard the models registry.
      */
     private static final Object sRegistryLock = new Object();
 
@@ -249,7 +249,7 @@ class ActivityChooserModel extends DataSetObservable {
     private final Context mContext;
 
     /**
-     * The name of the history file that backs this model.
+     * The name of the history file that backs this models.
      */
     private final String mHistoryFileName;
 
@@ -270,7 +270,7 @@ class ActivityChooserModel extends DataSetObservable {
 
     /**
      * Flag whether choice history can be read. In general many clients can
-     * share the same data model and {@link #readHistoricalData()} may be called
+     * share the same data models and {@link #readHistoricalData()} may be called
      * by arbitrary of them any number of times. Therefore, this class guarantees
      * that the very first read succeeds and subsequent reads can be performed
      * only after a call to {@link #persistHistoricalData()} followed by change
@@ -291,7 +291,7 @@ class ActivityChooserModel extends DataSetObservable {
 
     /**
      * Flag whether the choice records have changed. In general many clients can
-     * share the same data model and {@link #persistHistoricalData()} may be called
+     * share the same data models and {@link #persistHistoricalData()} may be called
      * by arbitrary of them any number of times. Therefore, this class guarantees
      * that choice history will be persisted only if it has changed.
      */
@@ -303,20 +303,20 @@ class ActivityChooserModel extends DataSetObservable {
     private final Handler mHandler = new Handler();
 
     /**
-     * Policy for controlling how the model handles chosen activities.
+     * Policy for controlling how the models handles chosen activities.
      */
     private OnChooseActivityListener mActivityChoserModelPolicy;
 
     /**
-     * Gets the data model backed by the contents of the provided file with historical data.
-     * Note that only one data model is backed by a given file, thus multiple calls with
-     * the same file name will return the same model instance. If no such instance is present
+     * Gets the data models backed by the contents of the provided file with historical data.
+     * Note that only one data models is backed by a given file, thus multiple calls with
+     * the same file name will return the same models instance. If no such instance is present
      * it is created.
      * <p>
      * <strong>Note:</strong> To use the default historical data file clients should explicitly
      * pass as file name {@link #DEFAULT_HISTORY_FILE_NAME}. If no persistence of the choice
      * history is desired clients should pass <code>null</code> for the file name. In such
-     * case a new model is returned for each invocation.
+     * case a new models is returned for each invocation.
      * </p>
      *
      * <p>
@@ -326,10 +326,10 @@ class ActivityChooserModel extends DataSetObservable {
      *
      * @param context Context for loading resources.
      * @param historyFileName File name with choice history, <code>null</code>
-     *        if the model should not be backed by a file. In this case the activities
+     *        if the models should not be backed by a file. In this case the activities
      *        will be ordered only by data from the current session.
      *
-     * @return The model.
+     * @return The models.
      */
     public static ActivityChooserModel get(Context context, String historyFileName) {
         synchronized (sRegistryLock) {
@@ -363,7 +363,7 @@ class ActivityChooserModel extends DataSetObservable {
      * Sets an intent for which to choose a activity.
      * <p>
      * <strong>Note:</strong> Clients must set only semantically similar
-     * intents for each data model.
+     * intents for each data models.
      * <p>
      *
      * @param intent The intent.
