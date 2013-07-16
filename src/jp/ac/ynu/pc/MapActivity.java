@@ -116,7 +116,7 @@ public class MapActivity extends SherlockActivity {
 
     }
 
-    private void addHotSpots(){
+    private void addHotSpots() {
         // 総合研究棟
         mapView.addHotSpot(new Rect(513, 469, 240 + 513, 220 + 469), new View.OnClickListener() {
             @Override
@@ -259,13 +259,34 @@ public class MapActivity extends SherlockActivity {
         });
     }
 
-    private RoomInfo getRoomInfo(Room room){
-        if(roomInfoHashMap.containsKey(room)){
+    private RoomInfo getRoomInfo(Room room) {
+        if (roomInfoHashMap.containsKey(room)) {
             return roomInfoHashMap.get(room);
         }
 
 
-
+        switch (room) {
+            case MACHINE_SHOP_A:
+            case MACHINE_SHOP_B:
+            case MACHINE_SHOP_C:
+            case MACHINE_SHOP_D:
+            case MACHINE_SHOP_E:
+            case MACHINE_SHOP_F:
+            case ECON_NEW_RESEARCH_301:
+            case BUSINESS_RESEARCH_303:
+            case EDHS_RESEARCH2_517:
+            case EDUCATION_DESIGN:
+            case DNJ_1F:
+            case DNJ_3F_1:
+            case DNJ_3F_2:
+            case MECHANICAL:
+            case GENERAL_RESEARCH_W204:
+            case INTERNATIONAL_STUDENT_CENTER:
+                case LIBRARY_1F_MEDIA:
+                    case LIBRARY_2F_PC:
+                        case LIBRARY_2F_REF:
+                            case LIBRARY_3F_PC:
+        }
         return null;
     }
 }
