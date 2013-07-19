@@ -7,13 +7,6 @@ import jp.ac.ynu.pc.enums.Room;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created with IntelliJ IDEA.
- * User: kosasa
- * Date: 2013/06/25
- * Time: 16:44
- * To change this template use File | Settings | File Templates.
- */
 public interface RoomInfo extends Parcelable {
     @Override
     int describeContents();

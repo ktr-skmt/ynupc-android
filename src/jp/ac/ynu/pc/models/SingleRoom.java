@@ -12,13 +12,6 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Locale;
 
-/**
- * Created with IntelliJ IDEA.
- * User: kosasa
- * Date: 2013/06/02
- * Time: 21:04
- * To change this template use File | Settings | File Templates.
- */
 public class SingleRoom implements RoomInfo {
     private static final String KEY_ROOM_NAME = "room_name";
     private static final String KEY_ENGLISH_ROOM_NAME = "english_room_name";
