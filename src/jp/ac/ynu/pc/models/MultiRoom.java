@@ -2,6 +2,7 @@ package jp.ac.ynu.pc.models;
 
 import android.content.Context;
 import android.os.Parcel;
+import android.os.Parcelable;
 import jp.ac.ynu.pc.enums.Room;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,6 +24,21 @@ public class MultiRoom implements RoomInfo {
 
     private int roomNameResource;
 
+    /**
+     * The Constant CREATOR.
+     */
+    public static final Parcelable.Creator<MultiRoom> CREATOR = new Parcelable.Creator<MultiRoom>() {
+        @Override
+        public MultiRoom createFromParcel(Parcel in) {
+            return new MultiRoom(in);
+        }
+
+        @Override
+        public MultiRoom[] newArray(int size) {
+            return new MultiRoom[size];
+        }
+    };
+
     public MultiRoom(Room room, int roomNameResource, RoomInfo... roomInfo){
         if(roomInfo.length < 2){
             throw new IllegalArgumentException();
@@ -36,6 +52,10 @@ public class MultiRoom implements RoomInfo {
         for(RoomInfo r : roomInfo){
             roomInfoMap.put(r.getRoom(), r);
         }
+    }
+
+    public MultiRoom(Parcel in) {
+        readFromParcel(in);
     }
 
     @Override

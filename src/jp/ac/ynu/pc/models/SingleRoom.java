@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Locale;
 
-public class SingleRoom implements RoomInfo {
+public class SingleRoom implements RoomInfo, Parcelable {
     private static final String KEY_ROOM_NAME = "room_name";
     private static final String KEY_ENGLISH_ROOM_NAME = "english_room_name";
     private static final String KEY_MODE = "mode";
@@ -47,15 +47,15 @@ public class SingleRoom implements RoomInfo {
     /**
      * The Constant CREATOR.
      */
-    public static final Parcelable.Creator<RoomInfo> CREATOR = new Parcelable.Creator<RoomInfo>() {
+    public static final Parcelable.Creator<SingleRoom> CREATOR = new Parcelable.Creator<SingleRoom>() {
         @Override
-        public RoomInfo createFromParcel(Parcel in) {
+        public SingleRoom createFromParcel(Parcel in) {
             return new SingleRoom(in);
         }
 
         @Override
-        public RoomInfo[] newArray(int size) {
-            return new RoomInfo[size];
+        public SingleRoom[] newArray(int size) {
+            return new SingleRoom[size];
         }
     };
 
