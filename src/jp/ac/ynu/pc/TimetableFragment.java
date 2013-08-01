@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -39,6 +40,7 @@ public class TimetableFragment extends Fragment {
     public TimetableAdapter timetableAdapter;
 
     public Handler handler = new Handler();
+    public TimetablePeriod timetablePeriod;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -67,6 +69,30 @@ public class TimetableFragment extends Fragment {
         adapter.add("木曜日");
         adapter.add("金曜日");
         spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(timetablePeriod == null)
+                    return;
+                Day day = Day.values()[position];
+
+                List<Lesson> lessonList = timetablePeriod.getLessonList(day);
+                timetableAdapter.clear();
+                timetableAdapter.addAll(lessonList);
+
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        timetableAdapter.notifyDataSetChanged();
+                        timeTable.invalidate();
+                    }
+                });
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
         int position = Day.getCurrentDayPosition();
         if(position > 0)
@@ -80,8 +106,7 @@ public class TimetableFragment extends Fragment {
                 try {
                     JSONObject object = new JSONObject(s);
 
-                    System.out.println(object);
-                    TimetablePeriod timetablePeriod = new TimetablePeriod(object);
+                    timetablePeriod = new TimetablePeriod(object);
                     List<Lesson> list = timetablePeriod.getLessonList(Day.getCurrentDay());
 
                     timetableAdapter.clear();
