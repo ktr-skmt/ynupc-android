@@ -79,6 +79,7 @@ public class SingleRoom implements RoomInfo, Parcelable {
         dest.writeString(room.getRoomName());
         dest.writeInt(availableSeats);
         dest.writeInt(totalSeats);
+        dest.writeSerializable(pcIds);
     }
 
     @Override
@@ -96,6 +97,7 @@ public class SingleRoom implements RoomInfo, Parcelable {
         room = Room.roomNameOf(in.readString());
         availableSeats = in.readInt();
         totalSeats = in.readInt();
+        pcIds = (HashSet<Integer>) in.readSerializable();
     }
 
     public SingleRoom(Parcel in) {

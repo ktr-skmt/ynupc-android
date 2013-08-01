@@ -3,13 +3,7 @@ package jp.ac.ynu.pc.models;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created with IntelliJ IDEA.
- * User: kosasa
- * Date: 2013/07/28
- * Time: 20:56
- * To change this template use File | Settings | File Templates.
- */
+
 public class Lesson {
     private static final String KEY_FACULTY = "faculty";
     private static final String KEY_GRADE = "grade";
@@ -30,10 +24,8 @@ public class Lesson {
     private String fixedNumber;
     /** 実施期間 */
     private String date;
-
-    Lesson(String jsonText) throws JSONException {
-        this(new JSONObject(jsonText));
-    }
+    /** ListViewの見出し */
+    private String headerTitle;
 
     Lesson(JSONObject json) throws JSONException {
         this.faculty = json.getString(KEY_FACULTY);
@@ -42,6 +34,10 @@ public class Lesson {
         this.lecturer = json.getString(KEY_LECTURER);
         this.fixedNumber = json.getString(KEY_FIXED_NUMBER);
         this.date = json.getString(KEY_DATE);
+    }
+
+    public Lesson(String headerTitle){
+        this.headerTitle = headerTitle;
     }
 
     public String getFaculty() {
@@ -66,5 +62,9 @@ public class Lesson {
 
     public String getDate() {
         return date;
+    }
+
+    public String getHeaderTitle(){
+        return headerTitle;
     }
 }

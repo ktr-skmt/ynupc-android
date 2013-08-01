@@ -49,7 +49,7 @@ public class TimetablePeriod {
         if (suffix == TimeSuffix.TODAY) {
             map = new HashMap<Day, Map<Period, List<Lesson>>>();
 
-            Day day = getCurrentDay();
+            Day day = Day.getCurrentDay();
             if(day == null){
                 return;
             }
@@ -77,35 +77,34 @@ public class TimetablePeriod {
         return periodListMap;
     }
 
-    public List<Lesson> getLessons(){
-        return null;
+    public List<Lesson> getLessonList(Day day){
+        List<Lesson> retList = new ArrayList<Lesson>();
+        Period[] periods = {Period.FIRST, Period.SECOND, Period.THIRD, Period.FORTH, Period.FIFTH, Period.NIGHT};
+
+        Map<Period, List<Lesson>> lessonMap = map.get(day);
+
+        if(lessonMap == null){
+            return null;
+        }
+
+        for(Period period : periods){
+            List<Lesson> lessons = lessonMap.get(period);
+
+            if(lessons != null && lessons.size() > 0){
+                retList.add(new Lesson(period.key));
+
+                for(Lesson lesson : lessons){
+                    retList.add(lesson);
+                }
+            }
+        }
+
+        return retList;
     }
 
     private Lesson initLesson(JSONObject object) throws JSONException {
         return new Lesson(object);
     }
-
-    private Day getCurrentDay() {
-        Calendar calendar = Calendar.getInstance();
-        Date currentTime = calendar.getTime();
-        SimpleDateFormat sdf = new SimpleDateFormat("E", Locale.JAPANESE);
-        String dateString = sdf.format(currentTime);
-
-        if (dateString.equals("月")) {
-            return Day.MON;
-        } else if (dateString.equals("火")) {
-            return Day.TUE;
-        } else if (dateString.equals("水")) {
-            return Day.WED;
-        } else if (dateString.equals("木")) {
-            return Day.THU;
-        } else if (dateString.equals("金")) {
-            return Day.FRI;
-        }
-        return null;
-    }
-
-
 
 
 }

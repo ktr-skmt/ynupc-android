@@ -2,6 +2,7 @@ package jp.ac.ynu.pc;
 
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import jp.ac.ynu.pc.R;
+import jp.ac.ynu.pc.enums.Day;
 import jp.ac.ynu.pc.enums.Room;
 import jp.ac.ynu.pc.enums.Timetable;
 import jp.ac.ynu.pc.models.Lesson;
@@ -31,6 +33,12 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class TimetableFragment extends Fragment {
+    public List<Lesson> lessons = new ArrayList<Lesson>();
+
+    public ListView timeTable;
+    public TimetableAdapter timetableAdapter;
+
+    public Handler handler = new Handler();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,6 +52,12 @@ public class TimetableFragment extends Fragment {
         Bundle bundle =getArguments();
         RoomInfo roomInfo = bundle.getParcelable(Config.BUNDLE_KEY_ROOM_INFO);
 
+
+        timeTable = (ListView) getView().findViewById(R.id.timetable_list);
+        timetableAdapter = new TimetableAdapter(getActivity(), lessons);
+
+        timeTable.setAdapter(timetableAdapter);
+
         Spinner spinner = (Spinner) getView().findViewById(R.id.timetable_spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -54,7 +68,11 @@ public class TimetableFragment extends Fragment {
         adapter.add("金曜日");
         spinner.setAdapter(adapter);
 
-        ApiRequest.getTimetable(Timetable.THIS, roomInfo.getRoom(), new AsyncHttpResponseHandler(){
+        int position = Day.getCurrentDayPosition();
+        if(position > 0)
+            spinner.setSelection(position);
+
+        ApiRequest.getTimetable(Timetable.THIS, roomInfo.getRoom(), new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(String s) {
                 super.onSuccess(s);
@@ -64,20 +82,26 @@ public class TimetableFragment extends Fragment {
 
                     System.out.println(object);
                     TimetablePeriod timetablePeriod = new TimetablePeriod(object);
+                    List<Lesson> list = timetablePeriod.getLessonList(Day.getCurrentDay());
 
+                    timetableAdapter.clear();
+                    timetableAdapter.addAll(list);
 
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            timetableAdapter.notifyDataSetChanged();
+                            timeTable.invalidate();
+                        }
+                    });
                 } catch (JSONException e) {
-
+                    e.printStackTrace();
                 }
             }
         });
 
-        List<Lesson> lessons = new ArrayList<Lesson>();
 
-        ListView timeTable = (ListView) getView().findViewById(R.id.timetable_list);
-        TimetableAdapter timetableAdapter = new TimetableAdapter(getActivity(), lessons);
 
-        timeTable.setAdapter(timetableAdapter);
     }
 
 }
