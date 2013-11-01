@@ -26,3 +26,4 @@ gen/
 .idea/
 out/production/
 *.iml
+release
