@@ -24,7 +24,9 @@ public interface RoomInfo extends Parcelable {
 
     Room getRoom();
 
-    String getRoomName();
+    Room getTimetableRoom();
+
+    String getRoomName(Context context);
 
     String getContents(Context context);
 }

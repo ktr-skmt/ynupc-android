@@ -10,6 +10,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,6 +22,7 @@ import java.util.Map;
 public class MultiRoom implements RoomInfo {
     private Room room;
     private Map<Room, RoomInfo> roomInfoMap;
+    private RoomInfo indexRoom;
 
     private int roomNameResource;
 
@@ -52,6 +54,8 @@ public class MultiRoom implements RoomInfo {
         for(RoomInfo r : roomInfo){
             roomInfoMap.put(r.getRoom(), r);
         }
+
+        indexRoom = roomInfo[0];
     }
 
     public MultiRoom(Parcel in) {
@@ -65,16 +69,29 @@ public class MultiRoom implements RoomInfo {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(roomNameResource);
+        dest.writeString(room.getRoomName());
+        dest.writeInt(roomInfoMap.size());
         for(Room room : roomInfoMap.keySet()){
             dest.writeString(room.getRoomName());
             dest.writeParcelable(roomInfoMap.get(room), flags);
         }
+
+
     }
 
     @Override
     public void readFromParcel(Parcel in) {
+        roomNameResource = in.readInt();
+        room = Room.roomNameOf(in.readString());
         roomInfoMap = new HashMap<Room, RoomInfo>();
-        roomInfoMap.put(Room.roomNameOf(in.readString()), (RoomInfo) in.readParcelable(SingleRoom.class.getClassLoader()));
+        int size = in.readInt();
+        for(int i = 0; i < size; ++i){
+            roomInfoMap.put(Room.roomNameOf(in.readString()),
+                (RoomInfo) in.readParcelable(SingleRoom.class.getClassLoader()));
+        }
+
+
     }
 
     @Override
@@ -89,11 +106,8 @@ public class MultiRoom implements RoomInfo {
 
     @Override
     public boolean isPCAvailable(int pcId, Room room) {
-        if(roomInfoMap.containsKey(room)){
-            return roomInfoMap.get(room).isPCAvailable(pcId);
-        }
+        return roomInfoMap.containsKey(room) && roomInfoMap.get(room).isPCAvailable(pcId);
 
-        return false;
     }
 
     @Override
@@ -102,12 +116,18 @@ public class MultiRoom implements RoomInfo {
     }
 
     @Override
-    public String getRoomName() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    public Room getTimetableRoom() {
+        // TODO: ハードコーディング直す
+        return Room.MACHINE_SHOP_C;
+    }
+
+    @Override
+    public String getRoomName(Context context) {
+        return context.getString(roomNameResource);
     }
 
     @Override
     public String getContents(Context context) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return indexRoom.getContents(context);
     }
 }

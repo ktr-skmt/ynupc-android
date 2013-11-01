@@ -168,7 +168,7 @@ public class SingleRoom implements RoomInfo, Parcelable {
     }
 
     @Override
-    public String getRoomName() {
+    public String getRoomName(Context context) {
         if (Locale.JAPAN.equals(Locale.getDefault())) {
             return roomName;
         } else {
@@ -240,4 +240,8 @@ public class SingleRoom implements RoomInfo, Parcelable {
         return String.format("%sの開館時間は%s-%sです。", day, openingTime, closingTime);
     }
 
+    @Override
+    public Room getTimetableRoom() {
+        return room;
+    }
 }

@@ -98,7 +98,7 @@ public class TimetableFragment extends Fragment {
         if(position > 0)
             spinner.setSelection(position);
 
-        ApiRequest.getTimetable(Timetable.THIS, roomInfo.getRoom(), new AsyncHttpResponseHandler() {
+        ApiRequest.getTimetable(Timetable.THIS, roomInfo.getTimetableRoom(), new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(String s) {
                 super.onSuccess(s);

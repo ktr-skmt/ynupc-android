@@ -29,9 +29,10 @@ public class RoomActivity extends SherlockFragmentActivity {
         RoomInfo roomInfo = bundle.getParcelable(Config.BUNDLE_KEY_ROOM_INFO);
 
         ActionBar actionBar = getSupportActionBar();
+//        actionBar.setDisplayOptions(0, ActionBar.DISPLAY_SHOW_HOME);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(roomInfo.getRoomName());
+        actionBar.setTitle(roomInfo.getRoomName(this));
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         ActionBar.Tab mapTab = actionBar.newTab();

@@ -20,7 +20,7 @@ import java.util.List;
 public class RoomInfoDialog extends Dialog{
 
     public RoomInfoDialog(Context context, int buildingNameResource , List<RoomInfo> infoList) {
-        super(context, android.R.style.Theme_Dialog);
+        super(context, R.style.Theme_Dialog);
 
         setContentView(R.layout.room_dialog_list);
         setTitle(buildingNameResource);

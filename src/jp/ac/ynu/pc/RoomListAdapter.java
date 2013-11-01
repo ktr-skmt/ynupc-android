@@ -36,9 +36,19 @@ public class RoomListAdapter extends ArrayAdapter<RoomInfo>{
         TextView opening = (TextView) view.findViewById(R.id.room_list_item_opening);
 
         final RoomInfo data = getItem(position);
+        String roomName = "";
+        String openingText = "";
+        if(data != null){
+            roomName = data.getRoomName(getContext());
+            openingText = data.getContents(getContext());
+        }
 
-        building.setText(data.getRoomName());
-        opening.setText(data.getContents(getContext()));
+        if(openingText.equals("null")){
+            openingText = "";
+        }
+
+        building.setText(roomName);
+        opening.setText(openingText);
 
         return view;
     }

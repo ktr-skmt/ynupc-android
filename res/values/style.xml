@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Styled" parent="Theme.Sherlock.Light.DarkActionBar">
+        <item name="actionBarStyle">@style/Widget.Styled.ActionBar</item>
+        <item name="android:actionBarStyle">@style/Widget.Styled.ActionBar</item>
+    </style>
+
+    <style name="Widget.Styled.ActionBar" parent="Widget.Sherlock.Light.ActionBar.Solid.Inverse">
+        <item name="background">#0064b6</item>
+        <item name="android:background">#0064b6</item>
+
+        <item name="backgroundSplit">#fff</item>
+        <item name="android:backgroundSplit">#fff</item>
+    </style>
+    <color name="black">#FF333333</color>
+    <color name="whitegrey">#FFFFFFFF</color>
+
+    <style name="Theme.Dialog" parent="@android:style/Theme.Dialog">
+        <item name="@android:windowBackground">@color/whitegrey</item>
+        <item name="@android:textColor">@color/black</item>
+    </style>
+</resources>

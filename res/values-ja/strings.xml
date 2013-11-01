@@ -40,4 +40,6 @@
     <string name="bldg_international_student_center">留学生センター</string>
     <string name="bldg_itsc_annex">情報基盤センター別館、大学教育総合センター</string>
     <string name="bldg_itsc">情報基盤センター</string>
+
+    <string name="dialog_network_disconnected">ネットワークにつながっていません。接続状態を確認してから再度起動してください。</string>
 </resources>
